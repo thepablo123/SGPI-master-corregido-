@@ -1,0 +1,83 @@
+﻿@model SGPI.Models.Usuario
+@{
+    ViewData["Title"] = "BuscarEstudiante";
+    Layout = "_LayoutMPC";
+}
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+       <div class="carousel-item active" style="
+    background: #fff;
+">
+        </div>
+
+
+
+    </div>
+
+    <div class="container1" id="container">
+        <div class="form-container sign-in-container">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">Tipo de Documento</label>
+                        @Html.DropDownList("IdDoc", new SelectList(ViewBag.documento, "IdDoc", "TipoDocumento"), new {@class="form-control dropdown"})
+
+
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputEmail4" class="form-label">Numero de documento</label>
+                        <input asp-for="NumeroDocumento" type="text" class="input1" id="inputtext">
+                    </div>
+                    <div class="col-md-2">
+
+                        <button type="submit" class="boton-buscar">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img class="img-buscar" src="https://cdn-icons-png.flaticon.com/512/107/107122.png">
+                                </div>
+                                <div class="col-md-6 p-r"> Buscar</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div class="container" s style=" font-size: 11px;">
+                @if (Model != null)
+                {
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Pri Nombre</th>
+                                <th>Seg Nombre</th>
+                                <th>Prim Apellido</th>
+                                <th>Seg Apellido</th>
+                                <th>Num Documento</th>
+                                <th>Email</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem=>modelItem.PrimerNombre)</td>
+                                <td>@Html.DisplayFor(modelItem=>modelItem.SegundoNombre)</td>
+                                <td>@Html.DisplayFor(modelItem=>modelItem.PrimerApellido)</td>
+                                <td>@Html.DisplayFor(modelItem=>modelItem.SegundoApellido)</td>
+                                <td>@Html.DisplayFor(modelItem=>modelItem.NumeroDocumento)</td>
+                                <td>@Html.DisplayFor(modelItem=>modelItem.Email)</td>
+                                <td>@Html.ActionLink("EntrevistasAdmisiones", "EntrevistasAdmisiones", new{IdUsuario=Model.IdUsuario})</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+
+    </div>

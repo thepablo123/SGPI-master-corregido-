@@ -1,0 +1,80 @@
+﻿@model SGPI.Models.Programacion
+@{
+    ViewData["Title"] = "ProgramarAsignatura";
+    Layout = "_LayoutMPC";
+}
+
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+       <div class="carousel-item active" style="
+    background: #f6f5f7;
+">
+        </div>
+
+
+
+    </div>
+    
+  
+
+</div>
+<div class="container1" id="container">
+    <div class="form-container sign-in-container">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <label  for="inputEmail4" class="form-label">Periodo Academico</label>
+                    <input asp-for="PeriodoAcademico" type="text" class="input1" id="inputtext">
+
+                </div>
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">Programa</label>
+                    @Html.DropDownList("IdPrograma", new SelectList(ViewBag.programa, "IdPrograma", "Programa1"), new {@class="form-control dropdown"})
+
+                </div>
+            </div>
+        <div class="container" s style=" font-size: 11px;">
+            <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Sala</th>
+                            <th>Asignatura</th>
+                            <th>Usuario</th>
+                            <th>Opcion</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input asp-for="FechaProgramacion" type="date" class="input1" id="inputtext">
+                            </td>
+                            <td>
+                                <input asp-for="Sala" type="text" class="input1" id="inputtext">
+                            </td>
+                            <td>
+                                @Html.DropDownList("IdAsignatura", new SelectList(ViewBag.asignatura, "IdAsignatura", "Nombre"), new {@class="form-control dropdown"})
+                            </td>
+                            <td>
+                                @Html.DropDownList("IdUsuario", new SelectList(ViewBag.usuario, "IdUsuario", "PrimerNombre"), new {@class="form-control dropdown"})
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-outline-danger">Agregar</button>
+                            </td>
+                         </tr>
+                    </tbody>
+                </table>
+        </div>
+        </form>
+    </div>
+
+</div>
+

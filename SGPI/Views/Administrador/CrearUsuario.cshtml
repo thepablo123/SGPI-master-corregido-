@@ -1,0 +1,99 @@
+﻿@model Usuario
+@{
+    ViewData["Title"] = "CrearUsuario";
+    Layout = "_LayoutMP";
+}
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active" >
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<div class="container1" id="container">
+    <div class="form-container sign-in-container">
+        <form method="post" class="row g-3">
+
+            <div class="row">
+            <div class="col-md-6">
+                <label for="inputState" class="form-label">Tipo de Documento</label>
+
+                 @Html.DropDownList("IdDoc", new SelectList(ViewBag.documento, "IdDoc", "TipoDocumento"), new {@class="form-control dropdown"})              
+            </div>
+             <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Numero de documento</label>
+                    <input asp-for="NumeroDocumento" type="text" class="input1" id="inputtext">
+            </div>
+            </div>
+
+             <div class="row">
+           
+           
+            <div class="col-md-3">
+                <label for="inputPassword4" class="form-label"> 
+                    Primer Nombre</label>
+                    <input asp-for="PrimerNombre" type="text" class="input1" id="inputtext">
+            </div>
+            <div class="col-md-3">
+                <label for="inputPassword4" class="form-label">Segundo Nombre</label>
+                    <input asp-for ="SegundoNombre" type="text" class="input1" id="inputtext">
+            </div>
+                <div class="col-md-3">
+                    <label for="inputAddress" class="form-label">Primer Apellidos</label>
+                    <input asp-for="PrimerApellido" type="text" class="input1" id="inputtext">
+                </div>
+                <div class="col-md-3">
+                    <label for="inputAddress" class="form-label">Segundo Apellidos</label>
+                    <input asp-for="SegundoApellido"  type="text" class="input1" id="inputtext">
+                </div>
+                <div class="col-md-6">
+                <label for="inputAddress2" class="form-label">Correo</label>
+                    <input asp-for="Email" type="email" class="input1" id="inputtext">
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">Contraseña</label>
+                    <input asp-for="Password" type="password" class="input1" id="inputCity">
+            </div>
+
+                <div class="col-md-3">
+                    <label for="inputState" class="form-label">Genero</label>
+                    @Html.DropDownList("IdGenero", new SelectList(ViewBag.genero, "IdGenero", "Genero1"), new {@class="form-control dropdown"})
+
+                </div>
+                <div class="col-md-3">
+                    <label for="inputState" class="form-label">Rol</label>
+                    @Html.DropDownList("IdRol", new SelectList(ViewBag.rol, "IdRol", "Rol1"), new {@class="form-control dropdown"})
+
+                </div>
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">Exposicion de Seguridad Informatica</label>
+                    @Html.DropDownList("IdPrograma", new SelectList(ViewBag.programa, "IdPrograma", "Programa1"), new {@class="form-control dropdown"})
+
+                </div>
+            </div>
+           
+           
+            <div class="col-12">
+            </div>
+            <div class="col-12">
+                <button type="submit" class="boton">
+                    Crear
+                </button>
+            </div>
+        </form>
+    </div>
+ 
+</div>
+
+

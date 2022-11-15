@@ -1,0 +1,38 @@
+﻿.body {
+    background: #f6f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    margin: -20px 0 50px;
+}
+
+.b-row {
+    margin-top: 19rem;
+}
+.programar, .Volver {
+    border-radius: 20px; border: 1px solid #7e7e7e;
+    background-color: #7e7e7e;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    
+}
+.b-row2 {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+ 
+}
+
+.b-row2 {
+    margin-top: 19rem;
+}

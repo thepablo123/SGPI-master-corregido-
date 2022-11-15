@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewData["Title"] = "EntrevistasAdmisiones";
+    Layout = "_LayoutMPC";
+}
+
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<div class="container1" id="container">
+    <div class="form-container sign-in-container">
+        <form class="row g-3">
+
+             <div class="row">
+
+
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">Tipo de Documento</label>
+
+                    @Html.DropDownList("IdEstudiante", new SelectList(ViewBag.estudiante, "IdEstudiante", "IdEstudiante"), new {@class="form-control dropdown"})
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 150px;margin-top: 2rem;"></textarea>
+  <label for="floatingTextarea">Comments</label>
+</div>
+                </div>
+            
+            </div>
+            <div class="b-row2" style="
+    /* margin-top: 12rem; */
+    position: relative;
+    left: 15rem;
+    bottom: 08rem;
+">
+
+                <div class="col-md-6" style="
+    position: relative;
+    left: 10rem;
+    /* top: 2.8rem; */
+">
+
+                    <button type="submit" class="programar"> Ingresar</button>
+                </div>
+
+                <div class="col-md-6" style="
+    position: relative;
+    left: 23rem;
+    bottom: 2.8rem;
+">
+
+                    <button type="submit" class="Volver">Volver</button>
+
+                </div>
+
+            </div>
+            <div class="b-row2" style="
+    margin-top: 12rem;
+">
+
+                <div class="col-md-6" style="
+    position: relative;
+    left: 10rem;
+    top: 2.8rem;
+">
+
+                    <button type="submit" class="programar"> Homologar</button>
+                </div>
+
+                <div class="col-md-6" style="
+    position: relative;
+    left: 23rem;
+">
+
+                    <button type="submit" class="Volver">Volver</button>
+
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+

@@ -1,0 +1,54 @@
+﻿
+            /* CREATE
+             */  Genero genero = new Genero();
+            genero.Genero1 = "masculino";
+
+            
+            context.Add(genero);
+            context.SaveChanges();
+
+           /* SELECT*/
+             var gen = (from s in context.Generos 
+                       where s.IdGenero == 1
+                       select s);
+           Genero nuevoGen=gen.SingleOrDefault();
+            nuevoGen.Genero1 = "Binario";
+            
+            context.Update(nuevoGen);
+            context.SaveChanges();
+
+            context.Remove(nuevoGen);
+            context.SaveChanges();
+               //Create
+            Usuario usuario = new Usuario();
+            usuario.PrimerNombre = "Gerson";
+            usuario.SegundoNombre = String.Empty;
+            usuario.PrimerApellido = "Largo";
+            usuario.SegundoApellido = "Ostiz";
+            usuario.Email = "gers0nl4r6o2001@gmail.com";
+            usuario.NumeroDocumento = "1034916161";
+            usuario.Password = String.Empty;
+            usuario.IdRol = 1; // Administrador
+            usuario.IdDoc = 1; // Cedula
+            usuario.IdGenero = 1; //Masculino 
+            usuario.IdPrograma = 1;//Especializacion 
+
+            context.Add(usuario);
+            context.SaveChanges();
+            //Query 
+            List<Usuario> ListaUsuario = new List<Usuario>();
+            ListaUsuario = context.Usuarios.ToList();
+            context.SaveChanges();
+            //Update
+            //Query con condicion (where)
+            /// var usr = context.Usuarios.Where(consulta => consulta.NumeroDocumento == "123456789").SingleOrDefault();
+
+            /// usr.SegundoNombre = "Davian";
+            ///context.Update(usr);
+            ///context.SaveChanges();
+
+
+            //Delete
+             var usr = context.Usuarios.Where(consulta => consulta.NumeroDocumento == "123456789").SingleOrDefault();
+            context.Remove(usr);
+            context.SaveChanges()

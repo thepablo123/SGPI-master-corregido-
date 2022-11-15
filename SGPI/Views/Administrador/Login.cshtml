@@ -1,0 +1,39 @@
+﻿@model Usuario
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_LayoutSGPI";
+}
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+	</div>
+	<div class="form-container sign-in-container">
+		<form method="post">
+			<h1>Iniciar sesion</h1>
+			<div class="social-container">
+				<img class="social-container-face" src="https://cdn.icon-icons.com/icons2/1558/PNG/512/353422-facebook-logo_107496.png">
+				<img class="social-container-face" src="https://cdn.icon-icons.com/icons2/2715/PNG/512/instagram_logo_icon_172387.png">
+				<img class="social-container-face" src="https://w7.pngwing.com/pngs/735/121/png-transparent-logo-whatsapp-computer-icons-encapsulated-postscript-whatsapp-text-simple-logo.png">
+			</div>
+
+			<input asp-for="NumeroDocumento" type="text" placeholder="Usuario" />
+			<input asp-for="Password" type="password" placeholder="Constraseña" />
+			<a href="/Administrador/OlvidarContrasena">¿Olvidaste tu contraseña?</a>
+			<button type="submit" >Ingresar</button>
+
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Sistema de Informacion Posgrado</h1>
+				<p>Ingresa tus datos personales y comienza tu viaje con nosotros</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Sistema de Informacion Posgrado</h1>
+				<p>Ingresa tus datos personales y comienza tu viaje con nosotros</p>
+
+			</div>
+		</div>
+	</div>
+</div>
